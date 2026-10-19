@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Lovedeep Singh – Digital Marketing Portfolio</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #F1F4EE;
+            --ink: #142238;
+            --mute: #55627A;
+            --line: #C9D1C4;
+            --acc: #2447F5;
+            --card: #E7ECE2;
+            box-sizing: border-box;
+            padding-top: env(safe-area-inset-top, 0px);
+            padding-bottom: env(safe-area-inset-bottom, 0px)
+        }
+
+        @media (prefers-color-scheme:dark) {
+            :root:not([data-theme="light"]) {
+                --bg: #101826;
+                --ink: #E8EEF7;
+                --mute: #9AA8C0;
+                --line: #26334A;
+                --acc: #7C95FF;
+                --card: #16213A
+            }
+        }
+
+        :root[data-theme="dark"] {
+            --bg: #101826;
+            --ink: #E8EEF7;
+            --mute: #9AA8C0;
+            --line: #26334A;
+            --acc: #7C95FF;
+            --card: #16213A
+        }
+
+        html {
+            scroll-padding-top: env(safe-area-inset-top, 0px);
+            scroll-behavior: smooth
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font: 1.125rem/1.65 "Source Serif 4", Georgia, serif
+        }
+
+        a {
+            color: inherit
+        }
+
+        :focus-visible {
+            outline: 3px solid var(--acc);
+            outline-offset: 3px
+        }
+
+        .wrap {
+            max-width: 62.5rem;
+            margin: 0 auto;
+            padding: 0 1.5rem
+        }
+
+        h1,
+        h2,
+        h3,
+        nav,
+        .btn,
+        .tag {
+            font-family: "Bricolage Grotesque", system-ui, sans-serif
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.375rem 0;
+            font-weight: 700
+        }
+
+        nav div {
+            display: flex;
+            gap: 1.375rem;
+            font-weight: 400;
+            font-size: 1rem
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--mute)
+        }
+
+        nav a:hover {
+            color: var(--ink)
+        }
+
+        .hero {
+            padding: 9vh 0 10vh
+        }
+
+        h1 {
+            font-size: clamp(3.4rem, 13vw, 9.5rem);
+            line-height: .88;
+            letter-spacing: -.045em;
+            margin: 0 0 .35em;
+            font-weight: 800
+        }
+
+        h1 span {
+            display: block;
+            overflow: hidden
+        }
+
+        h1 span i {
+            display: block;
+            font-style: normal;
+            transform: translateY(105%);
+            animation: up .9s cubic-bezier(.2, .8, .2, 1) forwards
+        }
+
+        h1 span:nth-child(2) i {
+            animation-delay: .15s;
+            color: var(--acc)
+        }
+
+        @keyframes up {
+            to {
+                transform: none
+            }
+        }
+
+        .lede {
+            max-width: 32em;
+            font-size: 1.3rem;
+            color: var(--mute);
+            margin: 0 0 1.6em
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8125rem 1.5rem;
+            border-radius: 62.4375rem;
+            background: var(--ink);
+            color: var(--bg);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-right: 0.625rem
+        }
+
+        .btn.alt {
+            background: none;
+            color: var(--ink);
+            border: 2px solid var(--ink)
+        }
+
+        section {
+            padding: 4.375rem 0;
+            border-top: 1px solid var(--line)
+        }
+
+        h2 {
+            font-size: 2rem;
+            letter-spacing: -.02em;
+            margin: 0 0 .8em
+        }
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2.5rem
+        }
+
+        .about h2 {
+            margin: 0
+        }
+
+        .about p {
+            margin: 0 0 1em;
+            max-width: 34em
+        }
+
+        .proj {
+            display: grid;
+            grid-template-columns: 7fr 5fr;
+            gap: 2.5rem;
+            padding: 2.125rem 0;
+            border-top: 1px solid var(--line)
+        }
+
+        .proj:first-of-type {
+            border-top: 0;
+            padding-top: 0
+        }
+
+        .proj h3 {
+            font-size: 1.8rem;
+            margin: 0 0 .3em;
+            letter-spacing: -.02em
+        }
+
+        .proj p {
+            margin: 0 0 .8em;
+            color: var(--mute)
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 0.875rem;
+            padding: 3px 0.75rem;
+            border: 1px solid var(--line);
+            border-radius: 62.4375rem;
+            margin: 0 0.375rem 0.375rem 0
+        }
+
+        .shot {
+            background: var(--card);
+            border-radius: 1.125rem;
+            min-height: 11.875rem;
+            display: grid;
+            place-items: center;
+            font: 700 3rem "Bricolage Grotesque", sans-serif;
+            color: var(--acc);
+            letter-spacing: -.04em
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(13.75rem, 1fr));
+            gap: 1.875rem
+        }
+
+        .skills h3 {
+            margin: 0 0 .4em;
+            font-size: 1.15rem
+        }
+
+        .skills p {
+            margin: 0;
+            color: var(--mute)
+        }
+
+        .contact a.big {
+            font: 800 clamp(1.6rem, 6vw, 3.6rem)/1.1 "Bricolage Grotesque", sans-serif;
+            letter-spacing: -.03em;
+            text-decoration-thickness: 4px;
+            text-decoration-color: var(--acc);
+            text-underline-offset: 0.5rem;
+            word-break: break-all
+        }
+
+        .links {
+            margin-top: 1.75rem;
+            display: flex;
+            gap: 1.375rem;
+            flex-wrap: wrap;
+            font-family: "Bricolage Grotesque", sans-serif
+        }
+
+        footer {
+            padding: 1.875rem 0 3.125rem;
+            color: var(--mute);
+            font-size: 0.9375rem;
+            border-top: 1px solid var(--line)
+        }
+
+        @media(max-width:700px) {
+
+            .about,
+            .proj {
+                grid-template-columns: 1fr;
+                gap: 18px
+            }
+
+            nav div {
+                gap: 14px
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            h1 span i {
+                animation: none;
+                transform: none
+            }
+
+            html {
+                scroll-behavior: auto
+            }
+        }
+
+        body {
+            overflow-x: hidden
+        }
+
+        .hero {
+            position: relative
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(4.375rem);
+            opacity: .45;
+            z-index: -1;
+            pointer-events: none
+        }
+
+        .b1 {
+            width: 26.25rem;
+            height: 26.25rem;
+            background: var(--acc);
+            right: -5rem;
+            top: -2.5rem;
+            animation: fl 11s ease-in-out infinite
+        }
+
+        .b2 {
+            width: 20rem;
+            height: 20rem;
+            background: #12C2A0;
+            right: 12.5rem;
+            top: 15rem;
+            opacity: .3;
+            animation: fl 14s ease-in-out infinite reverse
+        }
+
+        @keyframes fl {
+            50% {
+                transform: translate(-3.125rem, 2.5rem) scale(1.15)
+            }
+        }
+
+        .role {
+            font: 700 clamp(1.1rem, 3vw, 1.5rem) "Bricolage Grotesque", sans-serif;
+            margin: 0 0 .9em;
+            color: var(--acc);
+            min-height: 1.6em
+        }
+
+        .role:after {
+            content: "";
+            display: inline-block;
+            width: 3px;
+            height: 1.1em;
+            background: var(--acc);
+            margin-left: 4px;
+            vertical-align: -.15em;
+            animation: bl 1s steps(1) infinite
+        }
+
+        @keyframes bl {
+            50% {
+                opacity: 0
+            }
+        }
+
+        .marq {
+            overflow: hidden;
+            background: var(--ink);
+            color: var(--bg);
+            padding: 1rem 0;
+            margin: 0 -1.5rem;
+            transform: rotate(-1.2deg)
+        }
+
+        .marq div {
+            display: flex;
+            gap: 2.75rem;
+            width: max-content;
+            font: 800 1.5rem "Bricolage Grotesque", sans-serif;
+            animation: mq 22s linear infinite
+        }
+
+        .marq span:after {
+            content: "\2726";
+            margin-left: 2.75rem;
+            color: var(--acc)
+        }
+
+        @keyframes mq {
+            to {
+                transform: translateX(-50%)
+            }
+        }
+
+        .btn {
+            transition: transform .25s, box-shadow .25s
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0.75rem 1.5rem -0.5rem var(--acc)
+        }
+
+        .shot {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--card), var(--bg));
+            border: 1px solid var(--line);
+            transition: transform .4s
+        }
+
+        .shot:after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(105deg, transparent 40%, rgba(255, 255, 255, .35) 50%, transparent 60%);
+            transform: translateX(-100%);
+            transition: transform .8s
+        }
+
+        .proj:hover .shot {
+            transform: scale(1.03) rotate(-1deg)
+        }
+
+        .proj:hover .shot:after {
+            transform: translateX(100%)
+        }
+
+        .skills>div {
+            padding: 1.375rem;
+            border: 1px solid var(--line);
+            border-radius: 1rem;
+            background: var(--card);
+            transition: transform .3s, border-color .3s
+        }
+
+        .skills>div:hover {
+            transform: translateY(-0.375rem);
+            border-color: var(--acc)
+        }
+
+        h2:after {
+            content: "";
+            display: block;
+            height: 4px;
+            width: 0;
+            background: var(--acc);
+            margin-top: 0.625rem;
+            border-radius: 4px;
+            transition: width .8s .2s
+        }
+
+        .vis h2:after {
+            width: 3.5rem
+        }
+
+        .rv {
+            opacity: 0;
+            transform: translateY(2.125rem);
+            transition: opacity .8s, transform .8s
+        }
+
+        .rv.vis {
+            opacity: 1;
+            transform: none
+        }
+
+        .links a {
+            transition: color .2s, transform .2s;
+            display: inline-block
+        }
+
+        .links a:hover {
+            color: var(--acc);
+            transform: translateY(-3px)
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+
+            .blob,
+            .marq div,
+            .role:after {
+                animation: none
+            }
+
+            .rv {
+                opacity: 1;
+                transform: none;
+                transition: none
+            }
+        }
+
+        html {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility
+        }
+
+        @media(min-width:1800px) {
+            html {
+                font-size: 125%
+            }
+        }
+
+        @media(min-width:2400px) {
+            html {
+                font-size: 165%
+            }
+        }
+
+        @media(min-width:3200px) {
+            html {
+                font-size: 220%
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <nav><a href="#top" style="color:var(--ink)">LS</a>
+            <div><a href="#about">About</a><a href="#services">Services</a><a href="#education">Education</a><a
+                    href="#contact">Contact</a></div>
+        </nav>
+
+        <header class="hero" id="top">
+            <div class="blob b1"></div>
+            <div class="blob b2"></div>
+            <h1><span><i>Lovedeep</i></span><span><i>Singh</i></span></h1>
+            <p class="role" id="role" aria-label="SEO, Google Ads, Meta Ads, Website designing"></p>
+            <p class="lede">Digital marketing learner from Ambala City, skilled in SEO, Google Ads, Meta Ads, and
+                website designing.</p>
+            <a class="btn" href="#services">See what I do</a><a class="btn alt" href="#contact">Contact me</a>
+        </header>
+        <div class="marq" aria-hidden="true">
+            <div><span>SEO</span><span>Google Ads</span><span>Meta Ads</span><span>Website Designing</span><span>Digital
+                    Marketing</span><span>SEO</span><span>Google Ads</span><span>Meta Ads</span><span>Website
+                    Designing</span><span>Digital Marketing</span></div>
+        </div>
+
+        <section id="about" class="about">
+            <h2>About</h2>
+            <div>
+                <p>I'm Lovedeep, from Ambala City, Haryana. I passed 12th and I'm now pursuing my B.A. while also
+                    studying digital marketing at HIIT Ambala City.</p>
+                <p>I've learned how to get websites found on Google, run paid ads, and design websites. I'm looking for
+                    internships and entry-level work where I can help a business get more customers online.</p>
+            </div>
+        </section>
+
+        <section id="services">
+            <h2>What I can do</h2>
+            <article class="proj">
+                <div>
+                    <h3>SEO</h3>
+                    <p>Help your website show up higher on Google so more people find your business without paying for
+                        ads.</p><span class="tag">Keyword research</span><span class="tag">On-page SEO</span><span
+                        class="tag">Google search</span>
+                </div>
+                <div class="shot" aria-hidden="true">SEO</div>
+            </article>
+            <article class="proj">
+                <div>
+                    <h3>Google Ads</h3>
+                    <p>Set up search ads that put your business in front of people who are already looking for what you
+                        sell.</p><span class="tag">Search ads</span><span class="tag">Keywords</span><span
+                        class="tag">Ad copy</span>
+                </div>
+                <div class="shot" aria-hidden="true">Ads</div>
+            </article>
+            <article class="proj">
+                <div>
+                    <h3>Meta Ads</h3>
+                    <p>Run Facebook and Instagram ad campaigns to reach the right local audience and bring in enquiries.
+                    </p><span class="tag">Facebook</span><span class="tag">Instagram</span><span class="tag">Audience
+                        targeting</span>
+                </div>
+                <div class="shot" aria-hidden="true">Meta</div>
+            </article>
+            <article class="proj">
+                <div>
+                    <h3>Website designing</h3>
+                    <p>Design simple, clean websites that look good on phones and make it easy for visitors to contact
+                        you.</p><span class="tag">Layout</span><span class="tag">Mobile friendly</span><span
+                        class="tag">Landing pages</span>
+                </div>
+                <div class="shot" aria-hidden="true">Web</div>
+            </article>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="skills">
+                <div>
+                    <h3>12th</h3>
+                    <p>Passed</p>
+                </div>
+                <div>
+                    <h3>B.A.</h3>
+                    <p>Currently pursuing</p>
+                </div>
+                <div>
+                    <h3>Digital marketing course</h3>
+                    <p>HIIT Ambala City, currently pursuing</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Contact</h2>
+            <a class="big" href="mailto:lovedeepsiingh49@gmail.com">lovedeepsiingh49@gmail.com</a>
+            <div class="links"><a href="tel:+919518051548">Call 95180 51548</a><a
+                    href="https://wa.me/919518051548">WhatsApp</a><span>Ambala City, Haryana</span></div>
+        </section>
+        <footer>© 2026 Lovedeep Singh</footer>
+    </div>
+    <script>
+        (function () {
+            var r = document.getElementById("role"), w = ["SEO", "Google Ads", "Meta Ads", "Website designing"], i = 0, j = 0, d = false;
+            if (matchMedia("(prefers-reduced-motion:reduce)").matches) { r.textContent = w.join(" · "); }
+            else { (function t() { var x = w[i]; r.textContent = x.slice(0, j); if (!d && j < x.length) { j++; setTimeout(t, 90) } else if (!d) { d = true; setTimeout(t, 1300) } else if (j > 0) { j--; setTimeout(t, 45) } else { d = false; i = (i + 1) % w.length; setTimeout(t, 250) } })() }
+            var els = document.querySelectorAll("section,.proj,.skills>div");
+            if ("IntersectionObserver" in window) {
+                var o = new IntersectionObserver(function (e) { e.forEach(function (n) { if (n.isIntersecting) { n.target.classList.add("vis"); o.unobserve(n.target) } }) }, { threshold: .15 });
+                els.forEach(function (el) { el.classList.add("rv"); o.observe(el) })
+            }
+        })();
+    </script>
+</body>
+
+</html>
